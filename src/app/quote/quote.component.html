@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row">
-  <div *ngFor="let quote of quotes" class="col-lg-6 my-2">
+  <div *ngFor="let quote of quotes; let i=index" class="col-lg-6 my-2">
     <div class="card h-100">
       <div class="card-title"></div>
       <div class="card-body">
         <p>{{ quote.content }}</p>
       </div>
-      <app-quote-detail></app-quote-detail>
+      <app-quote-detail [quote]='quote' (upVote)="upVoteQuote(i)"></app-quote-detail>
     </div>
   </div>
 </div>
