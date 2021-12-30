@@ -6,7 +6,7 @@
       <div class="card-body">
         <p>{{ quote.content }}</p>
       </div>
-      <app-quote-detail [quote]='quote' (upVote)="upVoteQuote(i)"></app-quote-detail>
+      <app-quote-detail [quote]='quote' (upVote)="upVoteQuote(i)" (downVote)="downVoteQuote(i)"></app-quote-detail>
     </div>
   </div>
 </div>

@@ -11,13 +11,17 @@ import { faCaretDown, faCaretUp, faCoffee } from '@fortawesome/free-solid-svg-ic
 
 export class QuoteDetailComponent implements OnInit {
   @Input() quote!:Quote; 
-  @Output() upVote=new EventEmitter<boolean>() 
+  @Output() upVote=new EventEmitter<boolean>();
+  @Output() downVote=new EventEmitter<boolean>();
   faCaretUp=faCaretUp;
   faCaretDown=faCaretDown;
 
   like(){
     console.log("liked");
     this.upVote.emit(true);
+  }
+  dislike(){
+    this.downVote.emit(true);
   }
   constructor() { }
 
