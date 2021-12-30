@@ -16,6 +16,7 @@ export class QuoteComponent implements OnInit {
     new Quote(2,"Change will not come if we wait for some other person, or if we wait for some other time. We are the ones we've been waiting for. We are the change that we seek.","Barack Obama"),
     new Quote(3,"We're here to put a dent in the universe. Otherwise why else even be here?","Steve Jobs")
   ]
+  
   constructor() { }
 
   ngOnInit(): void {

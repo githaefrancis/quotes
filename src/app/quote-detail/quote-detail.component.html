@@ -1,0 +1,7 @@
+<div class="card-footer">
+  <fa-icon (click)='like()' [icon]="faCaretUp" size="3x" [styles]="{'color':'green'}" ></fa-icon><span>{{quote.upVote + 5}} Upvotes</span>
+  <fa-icon (click)='dislike()' [icon]="faCaretDown" size="3x" [styles]="{'color':'red'}"></fa-icon><span>{{quote.downVote}} Downvotes</span>
+
+  
+  <p class="text-end">By {{quote.author}}</p>
+</div>

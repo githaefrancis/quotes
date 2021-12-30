@@ -6,13 +6,7 @@
       <div class="card-body">
         <p>{{ quote.content }}</p>
       </div>
-      <div class="card-footer">
-        <fa-icon [icon]="faCaretUp" size="3x" [styles]="{'color':'green'}" ></fa-icon><span>{{quote.upvote}}</span>
-        <fa-icon [icon]="faCaretDown" size="3x" [styles]="{'color':'red'}"></fa-icon><span>{{quote.downvote}}</span>
-
-        
-        <p class="text-end">By {{quote.author}}</p>
-      </div>
+      <app-quote-detail></app-quote-detail>
     </div>
   </div>
 </div>
