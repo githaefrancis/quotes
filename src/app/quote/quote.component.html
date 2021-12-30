@@ -1,13 +1,16 @@
 <div class="container">
   <div class="row">
-  <div *ngFor="let quote of quotes" class="col-6">
+  <div *ngFor="let quote of quotes" class="col-lg-6 my-2">
     <div class="card h-100">
       <div class="card-title"></div>
       <div class="card-body">
         <p>{{ quote.content }}</p>
       </div>
       <div class="card-footer">
-        <p>{{quote.upvote}}</p>
+        <fa-icon [icon]="faCaretUp" size="3x" [styles]="{'color':'green'}" ></fa-icon><span>{{quote.upvote}}</span>
+        <fa-icon [icon]="faCaretDown" size="3x" [styles]="{'color':'red'}"></fa-icon><span>{{quote.downvote}}</span>
+
+        
         <p class="text-end">By {{quote.author}}</p>
       </div>
     </div>
