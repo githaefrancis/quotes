@@ -1,12 +1,23 @@
 <div class="container">
   <div class="row">
-  <div *ngFor="let quote of quotes; let i=index" class="col-lg-6 my-2">
-    <div class="card h-100" >
-      <div class="card-body " appHighlight [appHighlight]="mostVotedQuote" [index]="i">
-        <p>{{ quote.content }}</p>
+    <div *ngFor="let quote of quotes; let i = index" class="col-lg-6 my-2">
+      <div class="card h-100">
+        <div
+          class="card-body"
+          appHighlight
+          [appHighlight]="mostVotedQuote"
+          [index]="i"
+        >
+          <p>{{ quote.content }}</p>
+        </div>
+        <app-quote-detail
+          [quote]="quote"
+          (upVote)="upVoteQuote(i)"
+          (downVote)="downVoteQuote(i)"
+        ></app-quote-detail>
       </div>
-      <app-quote-detail [quote]='quote' (upVote)="upVoteQuote(i)" (downVote)="downVoteQuote(i)"></app-quote-detail>
     </div>
   </div>
+  <app-quote-form></app-quote-form>
 </div>
-</div>
+
