@@ -2,6 +2,7 @@
   <div class="row">
     <div *ngFor="let quote of quotes; let i = index" class="col-lg-6 my-2">
       <div class="card h-100">
+        <div class="card-title">Posted by {{quote.submittedBy.firstName}} {{quote.submittedBy.lastName}}</div>
         <div
           class="card-body"
           appHighlight
