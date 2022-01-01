@@ -9,7 +9,7 @@ export class HighlightDirective {
   
   constructor(private elem:ElementRef) { 
     this.elem.nativeElement.style.background="blue";
-    console.log(this.index);
+    // console.log(this.index);
   }
   @HostListener("change") onChanges(){
     this.highlight()

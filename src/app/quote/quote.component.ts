@@ -41,6 +41,12 @@ export class QuoteComponent implements OnInit {
     return topQuote;
     
   }
+  addNewQuote(quote:Quote){
+    console.log("Submission done");
+    let quoteNumber=this.quotes.length;
+    quote.id=quoteNumber + 1;
+    this.quotes.push(quote);
+  }
   constructor() { }
 
   ngOnInit(): void {

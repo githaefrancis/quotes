@@ -1,12 +1,12 @@
-<form #quoteForm='ngForm'>
+<form (ngSubmit)="submitQuote()" #quoteForm='ngForm'>
   <div class="row mb-3">
-    <div class="col">
+    <div class="col form-group">
       <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First name" aria-label="First name" [(ngModel)]="newQuote.submittedBy.firstName"  #firstName='ngModel' required>
     <div [hidden]="firstName.valid || firstName.pristine" class="alert alert-danger">
       <p>First name is required</p>
     </div>
     </div>
-    <div class="col">
+    <div class="col form-group">
       <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Last name" aria-label="Last name" [(ngModel)]="newQuote.submittedBy.lastName" #lastName='ngModel' required>
       <div [hidden]="lastName.valid || lastName.pristine" class="alert alert-danger">
         <p>Last name is required</p>
@@ -15,18 +15,19 @@
   </div>
  
   <div class="row mb-3">
-    <div class="col">
+    <div class="col form-group">
     <textarea class="form-control" id="quote" rows="3" name="quote" [(ngModel)]="newQuote.content" #content='ngModel' required></textarea>
     <div [hidden]="content.valid || content.pristine" class="alert alert-danger">
       <p>Quote is required</p>
     </div>
   </div>
-    <div class="col">
+    <div class="col form-group">
       <input type="text" class="form-control" placeholder="Author" aria-label="First name" id="author" name="author" [(ngModel)]="newQuote.author" #author='ngModel' required>
       <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
         <p>Author is required</p>
       </div>
     </div>
   </div>
-  <input type="submit" class="form-control" value="Submit Quote">
+  <!-- <input type="submit" class="form-control btn" value="Submit Quote"> -->
+  <button type="submit" class="btn btn-success">Submit Quote</button>
 </form>
