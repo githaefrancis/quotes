@@ -1,4 +1,4 @@
-<form (ngSubmit)="submitQuote()" #quoteForm='ngForm'>
+<form (ngSubmit)="submitQuote(quoteForm)" #quoteForm='ngForm'>
   <div class="row mb-3">
     <div class="col form-group">
       <input type="text" class="form-control" id="firstName" name="firstName" placeholder="First name" aria-label="First name" [(ngModel)]="newQuote.submittedBy.firstName"  #firstName='ngModel' required>
@@ -28,6 +28,6 @@
       </div>
     </div>
   </div>
-  <!-- <input type="submit" class="form-control btn" value="Submit Quote"> -->
-  <button type="submit" class="btn btn-success">Submit Quote</button>
+  <input type="submit" class="form-control btn" value="Submit Quote">
+  <!-- <button type="submit" class="btn btn-success">Submit Quote</button> -->
 </form>
