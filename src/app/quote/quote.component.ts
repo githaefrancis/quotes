@@ -17,6 +17,8 @@ export class QuoteComponent implements OnInit {
     new Quote(2,"Change will not come if we wait for some other person, or if we wait for some other time. We are the ones we've been waiting for. We are the change that we seek.","Barack Obama",new Username("Admin",""),new Date(2021,11,10,14,0,0,0)),
     new Quote(3,"We're here to put a dent in the universe. Otherwise why else even be here?","Steve Jobs",new Username("Admin",""),new Date(2021,11,10,12,0,0,0))
   ]
+
+  
   upVoteQuote(index:number){
     console.log("just upvoted a quote");
     this.quotes[index].upVote+=1;

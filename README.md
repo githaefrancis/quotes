@@ -1,27 +1,36 @@
-# Quotes
+# Quote App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.4.
+## Description
 
-## Development server
+This is a web application that displays quotes. It allows users to submit their own quotes
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Author 
+Francis Githae
 
-## Code scaffolding
+## Installation and setup
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Clone the repository to your machine
 
-## Build
+2. Install the dependencies with:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+npm install
 
-## Running unit tests
+```
+3. run the project using
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+ng serve --open
+```
 
-## Running end-to-end tests
+## Tools and Technologies
+Angular
+Typescript
+Bootstrap
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Contact
 
-## Further help
+mureithigithae@gmail.com
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## License
+This project is under the MIT license.
