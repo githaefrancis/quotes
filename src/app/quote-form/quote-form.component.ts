@@ -10,8 +10,7 @@ import { Username } from '../username';
 })
 export class QuoteFormComponent implements OnInit {
   newQuote=new Quote(0,"","",new Username("",""),new Date());
-  
-  
+
   @Output() addQuote=new EventEmitter<Quote>();
   submitQuote(form:NgForm){
     
