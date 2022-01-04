@@ -1,0 +1,7 @@
+header{
+  /* background-image: url(../../assets/hero.jpg); */
+  background:rgb(186, 193, 202);
+  height:80vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+}

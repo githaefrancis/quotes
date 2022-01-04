@@ -8,7 +8,7 @@ export class HighlightDirective {
   @Input() index!:any;
   
   constructor(private elem:ElementRef) { 
-    this.elem.nativeElement.style.background="blue";
+    // this.elem.nativeElement.style.background="blue";
     // console.log(this.index);
   }
   @HostListener("change") onChanges(){
@@ -18,8 +18,17 @@ export class HighlightDirective {
     this.highlight()
   }
   private highlight(){
-    this.elem.nativeElement.style.background="red";
+    
+    if(this.elem.nativeElement.id==Quote.topQuote){
+      this.elem.nativeElement.style.background="blue";
+      
+    }
+    else{
+      this.elem.nativeElement.style.background="white";
+    }
+    
     if(this.appHighlight){
+      console.log(this.elem.nativeElement)
       console.log(this.appHighlight);
     }
 

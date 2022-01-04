@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Quote } from '../quote';
 import { Username } from '../username';
 import { faCaretDown, faCaretUp, faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-quote',
@@ -13,11 +14,13 @@ export class QuoteComponent implements OnInit {
   color='white';
   mostVotedQuote!:Quote;
   quotes:Quote[]=[
-    new Quote(1,"It always seems impossible until it's done.","Nelson Mandela",new Username("Admin",""),new Date(2021,11,10,10,0,0,0)),
-    new Quote(2,"Change will not come if we wait for some other person, or if we wait for some other time. We are the ones we've been waiting for. We are the change that we seek.","Barack Obama",new Username("Admin",""),new Date(2021,11,10,14,0,0,0)),
+    new Quote(1,"It always seems impossible until it's done.","Nelson Mandela",new Username("Admin",""),new Date(2022,0,1,10,0,0,0)),
+    new Quote(2,"Change will not come if we wait for some other person, or if we wait for some other time. We are the ones we've been waiting for. We are the change that we seek.","Barack Obama",new Username("Admin",""),new Date(2021,11,29,14,0,0,0)),
     new Quote(3,"We're here to put a dent in the universe. Otherwise why else even be here?","Steve Jobs",new Username("Admin",""),new Date(2021,11,10,12,0,0,0))
   ]
 
+  
+  
   
   upVoteQuote(index:number){
     console.log("just upvoted a quote");
@@ -40,6 +43,8 @@ export class QuoteComponent implements OnInit {
       
     }
     console.log(topQuote);
+    Quote.topQuote=topQuote.id;
+    console.log(Quote.topQuote);
     return topQuote;
     
   }
@@ -51,8 +56,16 @@ export class QuoteComponent implements OnInit {
     quote.id=quoteNumber + 1;
     this.quotes.push(quote);
     console.log(this.quotes);
+    
+
   }
-  constructor() { }
+  
+  constructor() {
+   
+
+ 
+   }
+  
 
   ngOnInit(): void {
   }

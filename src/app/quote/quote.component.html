@@ -1,10 +1,29 @@
+<header class="container-fluid d-flex justify-content-evenly align-items-center">
+
+
+  <div class="row">
+    <div class="col-6">
+      <div><img src="../../assets/hero.jpg" class="img-fluid mx-2" alt=""></div>
+    </div>
+    <div class="col-6 d-flex align-items-center justify-content-center">
+    <div class="description">Post a Quote today to Make someones day.</div>
+
+
+    </div>
+  </div>
+    
+  
+  
+</header>
 <div class="container">
+  <h1 class="text-center">Quotes</h1>
   <div class="row">
     <div *ngFor="let quote of quotes; let i = index" class="col-lg-6 my-2">
       <div class="card h-100">
-        <div class="card-title">Posted by {{quote.submittedBy.firstName}} {{quote.submittedBy.lastName}} {{quote.createdOn | timeElapsed}} ago</div>
+        <div class="card-title">Posted by {{quote.submittedBy.firstName}} {{quote.submittedBy.lastName}} {{quote.createdOn | timeElapsed}}</div>
         <div
           class="card-body"
+          [attr.id]="quote.id"
           appHighlight
           [appHighlight]="mostVotedQuote"
           [index]="i"
@@ -22,3 +41,6 @@
   <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
 </div>
 
+<footer class="text-center">
+  &copy; 2022 Francis Githae
+</footer>
