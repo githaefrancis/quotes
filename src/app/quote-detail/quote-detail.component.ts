@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
 import { Quote } from '../quote';
-import { faCaretDown, faCaretUp, faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faCaretDown, faCaretUp, faCoffee,faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -13,8 +13,10 @@ export class QuoteDetailComponent implements OnInit {
   @Input() quote!:Quote; 
   @Output() upVote=new EventEmitter<boolean>();
   @Output() downVote=new EventEmitter<boolean>();
+  @Output() deleteQuote=new EventEmitter<boolean>();
   faCaretUp=faCaretUp;
   faCaretDown=faCaretDown;
+  faTrashAlt=faTrashAlt;
 
   like(){
     console.log("liked");
@@ -22,6 +24,9 @@ export class QuoteDetailComponent implements OnInit {
   }
   dislike(){
     this.downVote.emit(true);
+  }
+  delete(){
+    this.deleteQuote.emit(true);
   }
   constructor() { }
 

@@ -60,6 +60,9 @@ export class QuoteComponent implements OnInit {
 
   }
   
+  deleteQuote(index:number){
+    this.quotes.splice(index,1);
+  }
   constructor() {
    
 
