@@ -20,17 +20,23 @@ export class HighlightDirective {
   private highlight(){
     
     if(this.elem.nativeElement.id==Quote.topQuote){
-      this.elem.nativeElement.style.background="blue";
+      console.log(document.querySelector('.highlighted'));
+      
+      if(document.querySelector('.highlighted')){
+        document.querySelector('.highlighted')?.classList.remove("highlighted");
+      }
+    
+      this.elem.nativeElement.classList.add('highlighted');
       
     }
     else{
-      this.elem.nativeElement.style.background="white";
+      // this.elem.nativeElement.style.background="white";
     }
     
-    if(this.appHighlight){
-      console.log(this.elem.nativeElement)
-      console.log(this.appHighlight);
-    }
+    // if(this.appHighlight){
+    //   console.log(this.elem.nativeElement)
+    //   console.log(this.appHighlight);
+    // }
 
   }
   

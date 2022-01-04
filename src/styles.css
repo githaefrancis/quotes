@@ -5,3 +5,7 @@ html{
   width:100vw;
   overflow-x: hidden;
 }
+.highlighted{
+  background:blue;
+  color:white;
+}

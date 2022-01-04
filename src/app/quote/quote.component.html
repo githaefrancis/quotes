@@ -23,14 +23,16 @@
   <h1 class="text-center">Quotes</h1>
   <div class="row">
     <div *ngFor="let quote of quotes; let i = index" class="col-lg-6 my-2">
-      <div class="card h-100">
-        <div class="card-title">Posted by <span class="badge bg-secondary">{{quote.submittedBy.firstName}} {{quote.submittedBy.lastName}} </span> {{quote.createdOn | timeElapsed}}</div>
-        <div
-          class="card-body"
-          [attr.id]="quote.id"
+      <div class="card h-100"
+      [attr.id]="quote.id"
           appHighlight
           [appHighlight]="mostVotedQuote"
           [index]="i"
+      >
+        <div class="card-title">Posted by <span class="badge bg-secondary">{{quote.submittedBy.firstName}} {{quote.submittedBy.lastName}} </span> {{quote.createdOn | timeElapsed}}</div>
+        <div
+          class="card-body"
+          
         >
           <p>{{ quote.content }}</p>
         </div>
