@@ -27,10 +27,12 @@ ng serve --open
 Angular
 Typescript
 Bootstrap
+## Live Link
 
+[Quotes App](https://githaefrancis.github.io/quotes/)
 ## Contact
 
 mureithigithae@gmail.com
 
 ## License
-This project is under the MIT license.
+This project is published under the MIT Licence.
