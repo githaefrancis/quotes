@@ -61,7 +61,12 @@ export class QuoteComponent implements OnInit {
   }
   
   deleteQuote(index:number){
-    this.quotes.splice(index,1);
+
+    let confirmDelete=confirm("You are about to delete this quote.Would you like to proceed?");
+    if (confirmDelete){
+      this.quotes.splice(index,1);
+    }
+    
   }
   constructor() {
    
