@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import * as moment from 'moment';
 
 @Pipe({
-  name: 'timeElapsed'
+  name: 'timeElapsed',
+  pure:false
 })
 export class TimeElapsedPipe implements PipeTransform {
 
@@ -25,7 +26,7 @@ export class TimeElapsedPipe implements PipeTransform {
      return timeElapsed;
 
     }
-    refresh();
+    // refresh();
     setInterval(refresh,1000);
     return refresh()
   }
