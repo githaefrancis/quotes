@@ -21,7 +21,6 @@ export class TimeElapsedPipe implements PipeTransform {
     
     var refresh=function refresh(){
       var timeElapsed=moment(value).fromNow();
-      console.log("dhsauid")
     // return timeDifferenceInSeconds;
      return timeElapsed;
 
