@@ -13,13 +13,16 @@ export class QuoteFormComponent implements OnInit {
 
   @Output() addQuote=new EventEmitter<Quote>();
   submitQuote(form:NgForm){
-    
-    let now:Date=new Date();
+    let confirmSubmit=confirm("You are about to submit a Quote.Do you want to proceed?")
+    if(confirmSubmit){
+      let now:Date=new Date();
     console.log(now);
     console.log("emit submit");
     this.addQuote.emit(this.newQuote);
     this.newQuote=new Quote(0,"","",new Username("",""),new Date());
     form.resetForm();
+    }
+    
   }
   constructor() { }
 
