@@ -1,9 +1,9 @@
 <h1 class="text-center mt-5">Submit Quote</h1>
-<form [formGroup]="quoteForm" (ngSubmit)="submitQuote()" >
+<form [formGroup]="quoteForm" (ngSubmit)="submitQuote()">
   <div class="row mb-3 gy-2">
     <div class="col-lg-6 form-group">
       <input
-      formControlName="firstName"
+        formControlName="firstName"
         type="text"
         class="form-control"
         id="firstName"
@@ -13,11 +13,18 @@
         [(ngModel)]="newQuote.submittedBy.firstName"
         required
       />
-      <span class="text-danger" *ngIf="quoteForm.get('firstName')?.invalid && quoteForm.get('firstName')?.touched">First name is required</span>
+      <span
+        class="text-danger"
+        *ngIf="
+          quoteForm.get('firstName')?.invalid &&
+          quoteForm.get('firstName')?.touched
+        "
+        >First name is required</span
+      >
     </div>
     <div class="col-lg-6 form-group">
       <input
-      formControlName="lastName"
+        formControlName="lastName"
         type="text"
         class="form-control"
         id="lastName"
@@ -25,17 +32,23 @@
         placeholder="Last name"
         aria-label="Last name"
         [(ngModel)]="newQuote.submittedBy.lastName"
-      
         required
       />
-      <span class="text-danger" *ngIf="quoteForm.get('lastName')?.invalid && quoteForm.get('lastName')?.touched">Last name is required</span>
+      <span
+        class="text-danger"
+        *ngIf="
+          quoteForm.get('lastName')?.invalid &&
+          quoteForm.get('lastName')?.touched
+        "
+        >Last name is required</span
+      >
     </div>
   </div>
 
   <div class="row mb-3 gy-2">
     <div class="col-lg-6 form-group">
       <textarea
-      formControlName="quote"
+        formControlName="quote"
         class="form-control"
         id="quote"
         placeholder="quote"
@@ -44,12 +57,17 @@
         [(ngModel)]="newQuote.content"
         required
       ></textarea>
-      <span class="text-danger" *ngIf="quoteForm.get('quote')?.invalid && quoteForm.get('quote')?.touched">Quote is required</span>
-
+      <span
+        class="text-danger"
+        *ngIf="
+          quoteForm.get('quote')?.invalid && quoteForm.get('quote')?.touched
+        "
+        >Quote is required</span
+      >
     </div>
     <div class="col-lg-6 form-group">
       <input
-      formControlName="author"
+        formControlName="author"
         type="text"
         class="form-control"
         placeholder="Author"
@@ -59,10 +77,16 @@
         [(ngModel)]="newQuote.author"
         required
       />
-      <span class="text-danger" *ngIf="quoteForm.get('author')?.invalid && quoteForm.get('author')?.touched">Author is required</span>
+      <span
+        class="text-danger"
+        *ngIf="
+          quoteForm.get('author')?.invalid && quoteForm.get('author')?.touched
+        "
+        >Author is required</span
+      >
     </div>
   </div>
-  
+
   <div class="d-flex justify-content-center">
     <button type="submit" id="submitQuote" class="btn btn-success">
       Submit Quote
