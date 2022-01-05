@@ -9,7 +9,7 @@ import { Username } from '../username';
   styleUrls: ['./quote-form.component.css']
 })
 export class QuoteFormComponent implements OnInit {
-  
+  submitted:boolean=false;
   quoteForm=new FormGroup(
     {
       'firstName':new FormControl('fname',Validators.required  ),
@@ -25,16 +25,15 @@ export class QuoteFormComponent implements OnInit {
     if(this.quoteForm.valid){
       let confirmSubmit=confirm("You are about to submit a Quote.Do you want to proceed?")
     if(confirmSubmit){
-      let now:Date=new Date();
-    console.log(now);
-    console.log("emit submit");
     this.addQuote.emit(this.newQuote);
     this.newQuote=new Quote(0,"","",new Username("",""),new Date());
-    
+    console.log(this.submitted);
+    this.quoteForm.reset();
     }
     }
     else{
-      alert("provide all values");
+      this.submitted=true;
+      return;
     }
     
   }

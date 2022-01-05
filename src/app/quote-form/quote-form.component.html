@@ -16,8 +16,9 @@
       <span
         class="text-danger"
         *ngIf="
-          quoteForm.get('firstName')?.invalid &&
-          quoteForm.get('firstName')?.touched
+          (quoteForm.get('firstName')?.invalid &&
+            quoteForm.get('firstName')?.touched) ||
+          (submitted && quoteForm.get('firstName')?.invalid)
         "
         >First name is required</span
       >
@@ -37,8 +38,9 @@
       <span
         class="text-danger"
         *ngIf="
-          quoteForm.get('lastName')?.invalid &&
-          quoteForm.get('lastName')?.touched
+          (quoteForm.get('lastName')?.invalid &&
+            quoteForm.get('lastName')?.touched) ||
+          (submitted && quoteForm.get('lastName')?.invalid)
         "
         >Last name is required</span
       >
@@ -60,7 +62,9 @@
       <span
         class="text-danger"
         *ngIf="
-          quoteForm.get('quote')?.invalid && quoteForm.get('quote')?.touched
+          (quoteForm.get('quote')?.invalid &&
+            quoteForm.get('quote')?.touched) ||
+          (submitted && quoteForm.get('quote')?.invalid)
         "
         >Quote is required</span
       >
@@ -80,7 +84,9 @@
       <span
         class="text-danger"
         *ngIf="
-          quoteForm.get('author')?.invalid && quoteForm.get('author')?.touched
+          (quoteForm.get('author')?.invalid &&
+            quoteForm.get('author')?.touched) ||
+          (submitted && quoteForm.get('author')?.invalid)
         "
         >Author is required</span
       >
