@@ -19,7 +19,6 @@ export class QuoteDetailComponent implements OnInit {
   faTrashAlt=faTrashAlt;
 
   like(){
-    console.log("liked");
     this.upVote.emit(true);
   }
   dislike(){

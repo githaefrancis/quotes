@@ -23,10 +23,7 @@ export class QuoteComponent implements OnInit {
   
   
   upVoteQuote(index:number){
-    console.log("just upvoted a quote");
     this.quotes[index].upVote+=1;
-    console.log(index);
-    console.log(this.quotes[index].upVote)
     this.mostVotedQuote=this.getPopularQuote();
   }
   downVoteQuote(index:number){
@@ -42,20 +39,15 @@ export class QuoteComponent implements OnInit {
       }
       
     }
-    console.log(topQuote);
     Quote.topQuote=topQuote.id;
-    console.log(Quote.topQuote);
     return topQuote;
     
   }
   addNewQuote(quote:Quote){
-    console.log("Submission done");
     let quoteNumber=this.quotes.length;
-    console.log(quoteNumber)
     quote.createdOn=new Date;
     quote.id=quoteNumber + 1;
     this.quotes.push(quote);
-    console.log(this.quotes);
     
 
   }
