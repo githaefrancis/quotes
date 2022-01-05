@@ -14,12 +14,6 @@
         required
       />
       <span class="text-danger" *ngIf="quoteForm.get('firstName')?.invalid && quoteForm.get('firstName')?.touched">First name is required</span>
-      <!-- <div
-        [hidden]="firstName.valid || firstName.pristine"
-        class="alert alert-danger"
-      >
-        <p>First name is required</p>
-      </div> -->
     </div>
     <div class="col-lg-6 form-group">
       <input
@@ -35,13 +29,6 @@
         required
       />
       <span class="text-danger" *ngIf="quoteForm.get('lastName')?.invalid && quoteForm.get('lastName')?.touched">Last name is required</span>
-
-      <!-- <div
-        [hidden]="lastName.valid || lastName.pristine"
-        class="alert alert-danger"
-      >
-        <p>Last name is required</p>
-      </div> -->
     </div>
   </div>
 
@@ -59,12 +46,6 @@
       ></textarea>
       <span class="text-danger" *ngIf="quoteForm.get('quote')?.invalid && quoteForm.get('quote')?.touched">Quote is required</span>
 
-      <!-- <div
-        [hidden]="content.valid || content.pristine"
-        class="alert alert-danger"
-      >
-        <p>Quote is required</p>
-      </div> -->
     </div>
     <div class="col-lg-6 form-group">
       <input
@@ -79,16 +60,9 @@
         required
       />
       <span class="text-danger" *ngIf="quoteForm.get('author')?.invalid && quoteForm.get('author')?.touched">Author is required</span>
-
-      <!-- <div
-        [hidden]="author.valid || author.pristine"
-        class="alert alert-danger"
-      >
-        <p>Author is required</p>
-      </div> -->
     </div>
   </div>
-  <!-- <input type="submit" class="form-control btn" value="Submit Quote"> -->
+  
   <div class="d-flex justify-content-center">
     <button type="submit" id="submitQuote" class="btn btn-success">
       Submit Quote
