@@ -1,8 +1,9 @@
 <h1 class="text-center mt-5">Submit Quote</h1>
-<form (ngSubmit)="submitQuote(quoteForm)"  #quoteForm="ngForm">
+<form [formGroup]="quoteForm" (ngSubmit)="submitQuote()" >
   <div class="row mb-3 gy-2">
     <div class="col-lg-6 form-group">
       <input
+      formControlName="firstName"
         type="text"
         class="form-control"
         id="firstName"
@@ -10,18 +11,19 @@
         placeholder="First name"
         aria-label="First name"
         [(ngModel)]="newQuote.submittedBy.firstName"
-        #firstName="ngModel"
         required
       />
-      <div
+      <span class="text-danger" *ngIf="quoteForm.get('firstName')?.invalid && quoteForm.get('firstName')?.touched">First name is required</span>
+      <!-- <div
         [hidden]="firstName.valid || firstName.pristine"
         class="alert alert-danger"
       >
         <p>First name is required</p>
-      </div>
+      </div> -->
     </div>
     <div class="col-lg-6 form-group">
       <input
+      formControlName="lastName"
         type="text"
         class="form-control"
         id="lastName"
@@ -29,39 +31,44 @@
         placeholder="Last name"
         aria-label="Last name"
         [(ngModel)]="newQuote.submittedBy.lastName"
-        #lastName="ngModel"
+      
         required
       />
-      <div
+      <span class="text-danger" *ngIf="quoteForm.get('lastName')?.invalid && quoteForm.get('lastName')?.touched">Last name is required</span>
+
+      <!-- <div
         [hidden]="lastName.valid || lastName.pristine"
         class="alert alert-danger"
       >
         <p>Last name is required</p>
-      </div>
+      </div> -->
     </div>
   </div>
 
   <div class="row mb-3 gy-2">
     <div class="col-lg-6 form-group">
       <textarea
+      formControlName="quote"
         class="form-control"
         id="quote"
         placeholder="quote"
         rows="3"
         name="quote"
         [(ngModel)]="newQuote.content"
-        #content="ngModel"
         required
       ></textarea>
-      <div
+      <span class="text-danger" *ngIf="quoteForm.get('quote')?.invalid && quoteForm.get('quote')?.touched">Quote is required</span>
+
+      <!-- <div
         [hidden]="content.valid || content.pristine"
         class="alert alert-danger"
       >
         <p>Quote is required</p>
-      </div>
+      </div> -->
     </div>
     <div class="col-lg-6 form-group">
       <input
+      formControlName="author"
         type="text"
         class="form-control"
         placeholder="Author"
@@ -69,15 +76,16 @@
         id="author"
         name="author"
         [(ngModel)]="newQuote.author"
-        #author="ngModel"
         required
       />
-      <div
+      <span class="text-danger" *ngIf="quoteForm.get('author')?.invalid && quoteForm.get('author')?.touched">Author is required</span>
+
+      <!-- <div
         [hidden]="author.valid || author.pristine"
         class="alert alert-danger"
       >
         <p>Author is required</p>
-      </div>
+      </div> -->
     </div>
   </div>
   <!-- <input type="submit" class="form-control btn" value="Submit Quote"> -->
