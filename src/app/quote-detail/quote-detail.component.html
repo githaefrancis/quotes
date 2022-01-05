@@ -1,7 +1,7 @@
 <div class="card-footer">
   <p class="text-end">By {{quote.author}}</p>
-  <fa-icon [icon]="faCaretUp" size="3x" [styles]="{'color':'green'}" (click)="like()" class="button mx-2"></fa-icon><span>{{quote.upVote}} Upvotes</span>
-  <fa-icon  [icon]="faCaretDown" size="3x" [styles]="{'color':'red'}" (click)="dislike()" class="button mx-2"></fa-icon><span>{{quote.downVote}} Downvotes</span>
+  <fa-icon [icon]="faCaretUp" size="3x" [styles]="{'color':'green'}" (click)="like()" class="button mx-2"></fa-icon><span class="votes">{{quote.upVote}} Upvotes</span>
+  <fa-icon  [icon]="faCaretDown" size="3x" [styles]="{'color':'red'}" (click)="dislike()" class="button mx-2"></fa-icon><span class="votes">{{quote.downVote}} Downvotes</span>
   <fa-icon  [icon]="faTrashAlt" size="1x" [styles]="{'color':'red'}" (click)="delete()" class="float-end button"></fa-icon>
 
   
