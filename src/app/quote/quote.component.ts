@@ -57,6 +57,10 @@ export class QuoteComponent implements OnInit {
     let confirmDelete=confirm("You are about to delete this quote.Would you like to proceed?");
     if (confirmDelete){
       this.quotes.splice(index,1);
+      this.mostVotedQuote=this.getPopularQuote();
+    }
+    else{
+      return;
     }
     
   }

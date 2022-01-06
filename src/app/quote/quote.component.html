@@ -44,6 +44,7 @@
         ></app-quote-detail>
       </div>
     </div>
+    <div *ngIf="quotes.length<1"><p class="text-center text-danger">Feels so empty! Please add a Quote... </p></div>
   </div>
   <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
 </div>
